@@ -1,0 +1,46 @@
+<script>
+  /*var personCode = new QRCode("personCode", {
+   width: 128,
+   height: 128
+   });
+   personCode.makeCode("hello");*/
+</script>
+<ion-modal-view>
+
+  <ion-content id="fast_scan">
+    <!--个人二维码-->
+    <div id="personCode">
+    </div>
+
+    <!--时间条-->
+
+      <div class="out">
+        <div class="in"></div>
+      </div>
+      <span style="position: absolute;top: 162px;right: 55px;">{{homeMin}}:{{homeSec}}</span>
+
+    <!--提示信息-->
+    <h2>快速扫码验证</h2>
+
+    <!--操作轮播-->
+    <ion-slide-box does-continue="true" auto-play="true" slide-interval="3000">
+      <ion-slide>
+        <div style="height: 100px;text-align: center">第一步：扫描上方二维码进站</div>
+      </ion-slide>
+      <ion-slide>
+        <div style="height: 100px;text-align: center">第二步：扫描上方二维码出站</div>
+      </ion-slide>
+      <ion-slide>
+        <div style="height: 100px;text-align: center">第三步：系统自动结算消费信息</div>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div style="margin-top: -10px;margin-bottom: 30px">
+      <h3>请保证钱包中有余额充足</h3>
+      <h3>否则将导致出站验证失败</h3>
+    </div>
+
+    <img src="img/tab-home/u105.png" class="personCodeBtn" ng-click="closePersonCode();" />
+
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,44 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" href="#/tab/pubHelp"></a>
+    <!--标题-->
+    <h1 class="title">求助</h1>
+    <!--右侧按钮-->
+    <a class="button button-clear">发送</a>
+  </ion-header-bar>
+
+  <ion-content style="background-color: #f8f8f8">
+    <ion-item class="item item-borderless item-input" style="padding:16px;border: none">
+      <textarea class="pub_placeholder" placeholder="请输入求助的内容" style="resize: none;height:208px;padding: 0px;font-size: 16px;font-family: 微软雅黑;"></textarea>
+      <div class="item item-icon-right" style="position: absolute;width: 90%;left: 5%;bottom: 8%;height: 50px;padding: 12px 16px;font-family: 微软雅黑" ng-click="">
+        <img src="img/tab-pub/loc.png" height="25px" width="25px" style="margin:0px 0px -6px;"/>
+        添加事发位置
+        <i class="icon ion-ios-arrow-right" style="font-size: 24px"></i>
+      </div>
+    </ion-item>
+
+    <!--条带-->
+    <div class="stable-bg" style="height:10px;">
+    </div>
+
+    <div style="padding:10px 20px;height: 104px;background-color: #fff">
+      <div class="button button-icon" style="border:dashed #cccccc 1px;width:80px;height:80px;">
+        <img src="img/tab-pub/add.png" height="30px" width="30px"  style="margin-top: 25px"/>
+      </div>
+    </div>
+
+    <!--条带-->
+    <div class="stable-bg" style="height:10px;"></div>
+
+    <ion-item class="item item-icon-right" style="height:50px;border: none;padding: 12px 16px;font-family: 微软雅黑" ng-click="">
+      <img src="img/tab-pub/loc.png" height="25px" width="25px" style="margin:0px 0px -6px;"/>
+      所在位置
+      <i class="icon ion-ios-arrow-right" style="font-size: 24px"></i>
+
+    </ion-item>
+
+
+  </ion-content>
+</ion-view>

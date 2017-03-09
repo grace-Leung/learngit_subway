@@ -1,0 +1,47 @@
+<ion-view>
+
+  <div style="position:absolute;top:50px;width:100%;height: 56px;border-bottom:solid #d7d7d7 1px;padding:7px 20px;">
+    <p style="border:solid #49c29d 1px;border-radius: 12px;height: 35px;margin-top: 2px;" ng-click="toSearchHelp()">
+      <img style="height: 22px;margin: 5px 12px;" src="img/tab-pub/search.png" /></p>
+  </div>
+
+  <!--内容区-->
+  <ion-content style="top:106px;">
+    <ion-item class="item item-avatar-left pub_all" ng-if="pubHelpShow">
+      <img src="img/tab-account/user.png" />
+      <div  ng-click="toContentDetail()">
+        <p class="user_name">Jay</p>
+        <p style="color: #a1a1a1">17：00<span style="margin-right: 20px"></span> 龙翔桥站</p>
+        <p class="content">{{pubHelpCon}}</p>
+      </div>
+      <div >
+        @小二哥:我的儿子走丢了，他穿着蓝色的T恤。若有人看到我儿子，请与我联系。万分感谢！！
+        <p style="margin-bottom: 10px"><img src="img/tab-pub/top1.jpg" width="100%" height="100%"></p>
+      </div>
+      <a class="button button-clear" style="position: absolute;left: 230px;color: #a1a1a1" ng-click="toTransmit($index)"><img class="resend" src="img/tab-pub/post.png">转发</a>
+      <a class="button button-clear" style="left: 250px; color:#a1a1a1"><img class="comment" src="img/tab-pub/comment.png">2</a>
+    </ion-item>
+    <div ng-repeat="x in pubContent4Help">
+      <ion-item class="item item-avatar-left pub_all" >
+        <img src="{{x.userImg}}">
+        <div  ng-click="toContentDetail()">
+          <p class="user_name">{{x.user}}</p>
+          <p style="color: #a1a1a1">{{x.time}}<span style="margin-right: 20px"></span> {{x.place}}</p>
+          <p class="content">{{x.content}}{{x.contact}}</p>
+          <p style="margin-bottom: 10px" ng-if="x.hasImage">
+          <div  ng-if="x.hasImage" style="background-image: url({{x.image}});background-position: center center;background-size: cover; height: 200px;margin-bottom: 15px; overflow: hidden">
+            </div>
+          </p>
+        </div>
+        <!--<div ng-if="x.hasTrans">
+          @{{x.transName}}:{{x.transContent}}
+          <p style="margin-bottom: 10px" ng-if="x.hasImage"><img src="{{x.image}}" width="100%" height="100%"></p>
+        </div>-->
+        <a class="button button-clear" style="position: absolute;left: 230px;color: #a1a1a1" ng-click="toTransmit($index)"><img class="resend" src="img/tab-pub/post.png">转发</a>
+        <a class="button button-clear" style="left: 250px; color:#a1a1a1"><img class="comment" src="img/tab-pub/comment.png">2</a>
+      </ion-item>
+    </div>
+
+  </ion-content>
+
+</ion-view>

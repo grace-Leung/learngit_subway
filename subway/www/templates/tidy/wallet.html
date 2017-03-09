@@ -1,0 +1,44 @@
+<ion-view id="settingTidy">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" href="#/settingTidy">返回</a>
+    <!--标题-->
+    <h1 class="title">系统设置</h1>
+  </ion-header-bar>
+  <!--内容区-->
+  <ion-content id="settings" class="settingTidy">
+    <!--默认支付方式-->
+    <ion-item class="item item-divider" style="font-size:20px;padding-right:21px">
+      支付方式
+      <a class="likeButton" style="float: right;color:#49c29d;text-decoration: none;" href="#/morePayWay">添加</a>
+    </ion-item>
+    <ion-item>
+      <span class="bank_name" style="color: #666;font-size: 24px">支付宝</span>
+      <span class="number" style="float: right">189***454156</span>
+    </ion-item>
+    <ion-item>
+      <span class="bank_name" style="color: #666;font-size: 24px">交通银行</span>
+      <span class="number" style="float: right">189***454156435345</span>
+    </ion-item>
+    <ion-item>
+      <span class="bank_name" style="color: #666;font-size: 24px">工商银行</span>
+      <span class="number" style="float: right">189***454156222342</span>
+    </ion-item>
+
+    <ion-item class="item item-divider" style="font-size:20px">
+      其他
+    </ion-item>
+    <ion-item class="item item-icon-right"  href="#/payRecord" style="font-size:24px">
+      支付记录
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" href="#/safeDetail">
+      <span class="safety_item" style="color: #666;font-size: 24px">绑定手机</span>
+      <span class="number" style="float: right;">1321**9852</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+
+  </ion-content>
+
+</ion-view>

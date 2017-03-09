@@ -1,0 +1,70 @@
+<ion-view>
+
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center" style="background-image: none">
+    <!--标题-->
+    <h1 class="title">{{nowLang.tabAccount[0]}}</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content id="personal_page">
+    <div class="balanced-bg">
+      <!--头像-->
+      <div class="light-bg">
+        <img class="likeButton" src="img/tab-account/user.png" width="80%" height="80%" ng-click="toEdit();" />
+      </div>
+
+      <div class="row">
+        <div class="col" style="padding-top: 8px">
+          <img class="accountImg" style="position: absolute;left: 40px" src="img/tab-account/mail.png" ng-click="toSystemMessage();"/>
+        </div>
+
+        <div class="col">
+          <h2>周杰伦</h2>
+          <p>1 8 8 * * * * 8 0 7 6</p>
+        </div>
+
+        <div class="col">
+          <img class="accountImg" style="position: absolute;right: 40px" src="img/tab-account/more.png" ng-click="toSetting();"/>
+        </div>
+      </div>
+
+    </div>
+    <!--按钮-->
+    <div class="row" id="personal_btn">
+      <a class="col button button-icon" href="#/payWay">
+        <img src="img/tab-account/payWay.png" height="26px" width="26px">
+        <span>{{nowLang.tabAccount[1]}}</span>
+      </a>
+      <a class="col button button-icon" href="#/safe">
+        <img src="img/tab-account/safe.png" height="23px" width="23px" style="top: 4px;">
+        <span style="right: 14px;">{{nowLang.tabAccount[2]}}</span>
+      </a>
+      <a class="col button button-icon" href="#/payRecord">
+        <img src="img/tab-account/record.png" height="26px" width="26px">
+        <span>{{nowLang.tabAccount[3]}}</span>
+      </a>
+    </div>
+
+    <!--条带-->
+    <div style="height:11px;background-color: #f2f2f2;"></div>
+
+    <!--个人环保-->
+    <div class="row" id="personal_grade" >
+      <div style="padding: 0px 20px 20px 20px">
+        <img src="img/tab-account/tree.png" ng-click="toEnpt();">
+      </div>
+      <div class="col" style="padding-top: 12px">
+        <p style="font-size: 18px;color: #333333;font-family: 微软雅黑">{{nowLang.tabAccount[4]}}<span>29909</span></p>
+        <p style="font-size: 16px;color: #999999;">{{nowLang.tabAccount[5]}}<span>V6</span>{{nowLang.tabAccount[6]}}<span>404</span></p>
+        <div class="outter">
+          <div class="inner"><span style="color: #ffffff">2096/2500</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center" class="likeButton">
+      <i class="icon ion-chevron-down" ng-click="toEnpt();"></i>
+      <!--<p style="color: #999999;font-size: 14px" >详情</p>-->
+    </div>
+  </ion-content>
+</ion-view>

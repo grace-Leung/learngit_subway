@@ -1,0 +1,62 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" href="#/tab/account"></a>
+    <!--标题-->
+    <h1 class="title">{{nowLang.setting[0]}}</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content id="settings">
+    <ion-item class="item item-divider">
+      {{nowLang.setting[1]}}
+    </ion-item>
+    <ion-toggle ng-model="settings.enablePush" id="complete_push">
+      {{nowLang.setting[2]}}
+    </ion-toggle>
+    <ion-item class="item item-icon-right" ng-click="toSetVersion();">
+      {{nowLang.setting[3]}}
+      <span style="position:absolute;right:40px;">{{ver}}</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" href="#/setLang">
+      {{nowLang.setting[4]}}
+      <span style="position:absolute;right:40px;">{{lang}}</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      {{nowLang.setting[5]}}
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+
+    <ion-item class="item item-divider">
+      {{nowLang.setting[6]}}
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      {{nowLang.setting[7]}}
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      {{nowLang.setting[8]}}
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      {{nowLang.setting[9]}}
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+
+    <ion-item class="item item-divider">
+      {{nowLang.setting[10]}}
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      {{nowLang.setting[11]}}
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      {{nowLang.setting[12]}}
+      <span style="position:absolute;right:40px;">{{nowLang.tabAccount[13]}}</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+  </ion-content>
+</ion-view>

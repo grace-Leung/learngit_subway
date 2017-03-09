@@ -1,0 +1,20 @@
+<ion-header-bar class="bar-balanced" align-title="center">
+  <a class="button button-clear  icon ion-ios-arrow-back" href="#/tab/home"></a>
+  <h1 class="title">我的行程</h1>
+  <a class="button button-clear">搜索</a>
+</ion-header-bar>
+<ion-tabs class="tabs-striped tabs-top tabs-color-active-assertive" id="my_tickets_tab">
+
+  <ion-tab title="待付款" nav-transition="android" href="#/orderTab/notPay">
+    <ion-nav-view name="orderTab-notPay"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="未使用" href="#/orderTab/notUse">
+    <ion-nav-view name="orderTab-notUse" ></ion-nav-view>
+  </ion-tab >
+
+  <ion-tab title="已失效" href="#/orderTab/noUse">
+    <ion-nav-view name="orderTab-noUse" ></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

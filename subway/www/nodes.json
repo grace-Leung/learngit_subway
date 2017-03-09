@@ -1,0 +1,66 @@
+{
+  "stations" :
+  [
+    [
+      {"id":0,"name":"湘湖","x":100,"y":550,"tx":90,"ty":555,"anchor":"end"},
+      {"id":1,"name":"滨康路","x":100,"y":524,"tx":90,"ty":529,"anchor":"end"},
+      {"id":2,"name":"西兴","x":100,"y":498,"tx":90,"ty":503,"anchor":"end"},
+      {"id":3,"name":"滨和路","x":100,"y":472,"tx":90,"ty":477,"anchor":"end"},
+      {"id":4,"name":"江陵路","x":100,"y":446,"tx":90,"ty":451,"anchor":"end"},
+      {"id":5,"name":"近江","x":100,"y":420,"tx":90,"ty":425,"anchor":"end"},
+      {"id":6,"name":"资江路","x":100,"y":394,"tx":90,"ty":399,"anchor":"end"},
+      {"id":7,"name":"城站","x":100,"y":368,"tx":90,"ty":373,"anchor":"end"},
+      {"id":8,"name":"定安路","x":100,"y":342,"tx":90,"ty":347,"anchor":"end"},
+      {"id":9,"name":"龙翔桥","x":100,"y":316,"tx":90,"ty":321,"anchor":"end"},
+      {"id":10,"name":"凤起路","x":100,"y":290,"tx":90,"ty":295,"anchor":"end"},
+      {"id":11,"name":"武林广场","x":100,"y":264,"tx":90,"ty":269,"anchor":"end"},
+      {"id":12,"name":"西湖文化广场","x":100,"y":200,"tx":90,"ty":205,"anchor":"end"},
+
+      {"id":13,"name":"打铁关","x":135,"y":200,"tx":135,"ty":190,"anchor":"middle"},
+      {"id":14,"name":"闸弄口","x":170,"y":200,"tx":170,"ty":220,"anchor":"middle"},
+      {"id":15,"name":"火车东站","x":205,"y":200,"tx":205,"ty":190,"anchor":"middle"},
+      {"id":16,"name":"彭阜","x":240,"y":200,"tx":240,"ty":220,"anchor":"middle"},
+      {"id":17,"name":"七堡","x":275,"y":200,"tx":275,"ty":220,"anchor":"middle"},
+      {"id":18,"name":"九和路","x":310,"y":200,"tx":310,"ty":220,"anchor":"middle"},
+      {"id":19,"name":"九堡","x":345,"y":200,"tx":345,"ty":220,"anchor":"middle"},
+      {"id":20,"name":"客运中心","x":380,"y":200,"tx":380,"ty":195,"anchor":"top"},
+      {"id":21,"name":"下沙西","x":415,"y":200,"tx":415,"ty":220,"anchor":"middle"},
+      {"id":22,"name":"金沙湖","x":450,"y":200,"tx":455,"ty":220,"anchor":"middle"},
+      {"id":23,"name":"高沙路","x":485,"y":200,"tx":485,"ty":190,"anchor":"middle"},
+      {"id":24,"name":"文泽路","x":520,"y":200,"tx":550,"ty":220,"anchor":"end"},
+
+      {"id":25,"name":"乔司南","x":380,"y":175,"tx":370,"ty":180,"anchor":"end"},
+      {"id":26,"name":"乔司","x":380,"y":150,"tx":370,"ty":155,"anchor":"end"},
+      {"id":27,"name":"翁梅","x":380,"y":125,"tx":370,"ty":130,"anchor":"end"},
+      {"id":28,"name":"余杭高铁站","x":380,"y":100,"tx":370,"ty":105,"anchor":"end"},
+      {"id":29,"name":"南苑","x":380,"y":75,"tx":370,"ty":80,"anchor":"end"},
+      {"id":30,"name":"临平","x":380,"y":50,"tx":370,"ty":55,"anchor":"end"}
+    ],
+    [
+      {"id":31,"name":"城星路","x":124,"y":420,"tx":126,"ty":408,"anchor":"middle"},
+      {"id":32,"name":"市民中心","x":151,"y":420,"tx":155,"ty":438,"anchor":"middle"},
+      {"id":33,"name":"江锦路","x":178,"y":420,"tx":185,"ty":408,"anchor":"middle"},
+      {"id":34,"name":"钱江路","x":205,"y":420,"tx":205,"ty":438,"anchor":"middle"},
+
+      {"id":35,"name":"景芳","x":205,"y":365,"tx":230,"ty":370,"anchor":"middle"},
+      {"id":36,"name":"新塘","x":205,"y":310,"tx":230,"ty":315,"anchor":"middle"},
+      {"id":37,"name":"新风","x":205,"y":255,"tx":230,"ty":260,"anchor":"middle"}
+    ],
+
+
+    [
+      {"id":38,"name":"盈丰路","x":250,"y":420,"tx":250,"ty":408,"anchor":"middle"},
+      {"id":39,"name":"飞虹路","x":290,"y":420,"tx":290,"ty":408,"anchor":"middle"},
+      {"id":40,"name":"振宁路","x":330,"y":420,"tx":330,"ty":438,"anchor":"middle"},
+      {"id":41,"name":"建设三路","x":370,"y":420,"tx":370,"ty":408,"anchor":"middle"},
+      {"id":42,"name":"建设一路","x":410,"y":420,"tx":410,"ty":438,"anchor":"middle"},
+
+      {"id":43,"name":"人民广场","x":450,"y":420,"tx":460,"ty":425,"anchor":"start"},
+      {"id":44,"name":"杭发厂","x":450,"y":450,"tx":460,"ty":455,"anchor":"start"},
+      {"id":45,"name":"人民路","x":450,"y":475,"tx":460,"ty":480,"anchor":"start"},
+      {"id":46,"name":"潘水","x":450,"y":500,"tx":460,"ty":505,"anchor":"start"},
+      {"id":47,"name":"曹家桥","x":450,"y":525,"tx":460,"ty":530,"anchor":"start"},
+      {"id":48,"name":"朝阳","x":450,"y":550,"tx":460,"ty":555,"anchor":"start"}
+    ]
+  ]
+}

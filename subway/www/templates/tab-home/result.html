@@ -1,0 +1,74 @@
+<ion-view cache-view="false">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" ng-click="resultToBack()"></a>
+    <!--标题-->
+    <h1 class="title">购票成功</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content style="text-align: -webkit-center;padding-top: 30px">
+
+    <!--起点/终点-->
+    <div class="station_end" style="float:left;margin-left: 25px;color: #49c29d">{{stPoint}}</div>
+    <img style="height: 24px;" src="img/tidy/angle-double.png"/>
+    <div class="station_end" style="float:right;margin-right: 25px;color: #49c29d">{{edPoint}}</div>
+    <!--二维码-->
+    <div id="barcode"></div>
+
+    <!--取票码-->
+    <h1 style="font-size: 32px;letter-spacing: 10px;font-family: 微软雅黑;color: #666">{{ticketCode}}</h1>
+
+    <!--分割线-->
+    <hr style="margin: 20px 35px"/>
+
+    <!--票面信息-->
+    <div id="ticket_info"
+         style="text-align: left;line-height: 30px;font-size: 16px;left: 20px;padding-left: 45px;font-family: 微软雅黑;margin-bottom: 15px;">
+      <p style="float: right;margin:20px 60px 0px 0px;font-size: 24px;color: #49c29d">
+        <img src="img/pagelines.png" height="32px" width="32px" style="margin: 0px 5px -8px 0px;"/>
+        +<span id="resultEnptPoint"></span>
+      </p>
+      <p><span>支付金额：</span>{{ticket.money}}元</p>
+      <p><span>支付方式：</span>{{ticket.payWay}}</p>
+      <p><span>购买日期：</span>{{ticket.date}}</p>
+
+    </div>
+
+    <!--环形计时-->
+    <div style="margin: 10px 25px 10px 25px;padding: 10px;height: 130px">
+      <div id="ldm1" style="position:absolute;left:35px;width:344px;">
+        <div style="float: left">
+          <div id="circles-1"></div>
+          <p>即将到站</p></div>
+        <div style="float: right">
+          <div id="circles-3"></div>
+          <p>末班车</p></div>
+        <div>
+          <div id="circles-2"></div>
+          <p>正在途中</p></div>
+      </div>
+    </div>
+
+    <!--经过线路-->
+    <p id="resultPassedLines" style="font-family:微软雅黑;font-size: 24px;margin: 10px 0px 20px"></p>
+    <!--经过站点-->
+    <ion-scroll zooming="false" direction="x" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="overflow:hidden;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="{{passStaWidth}}px" height="140" style="font-family: 微软雅黑;font-size: 16px">
+        <g id="resultPassStation"></g>
+      </svg>
+    </ion-scroll>
+  </ion-content>
+
+  <!--收藏/退票-->
+  <div
+    style="position: absolute;bottom:0px;width:100%;height: 69px;background-color: rgba(255,255,255,0.8);text-align: center;pointer-events: none">
+    <button class="button resultButton set_stop" style="color:#fff" ng-click="likeRouter()">{{likeContent}}</button>
+    <button class="button resultButton set_stop" style="color:#fff" ng-click="ticketOut();">申请退票</button>
+    <img ng-show="isLike" id="likeImg" style="position: absolute;top:-14px;left:105px;" src="img/tab-home/like.png" height="32px" width="32px" >
+  </div>
+
+
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view>
+
+  <ion-content style="height:{{indexTidyHeight}}px">
+    <div class="balanced-bg" style="border-bottom:none;height:294px;background-color:#49c29d;font-family: 微软雅黑;font-size: 48px;color:#fff;text-align: center;padding-top: 103px;margin-bottom:20px ">
+      赛百路
+      <img src="img/tidy/bc.png" style="position: absolute;top:30.5%;left:25.3%;" height="10%" width="52%" />
+    </div>
+    <img src="img/tidy/barcode.png" height="110px" width="111px" class="likeButton" style="position:absolute;top:{{indexTidyHeight*0.315}}px;left:37%;" ng-click="toPersonCodeTidy();" />
+    <a class="button button-clear icon ion-gear-a" id="btn_setting" style="float: right;position: relative;top: -15px" href="#/settingTidy"></a>
+
+    <div class="row cat_box" style="padding: 0px 30px">
+      <div class="col button button-icon" ng-click="toSubwaySearch();">
+        <div class="img_box"><img src="img/tidy/subway.png" /></div>
+        <p>地铁查询</p>
+      </div>
+      <div class="col button button-icon" ng-click="toLandmarkSearch();">
+        <div class="img_box"><img src="img/tidy/router.png" style="width:93px;margin-left: -6px;"/></div>
+        <p>地标检索</p>
+      </div>
+    </div>
+    <div class="row cat_box" style="padding: 0px 30px">
+      <div class="col button button-icon" ng-click="toFacility();">
+        <div class="img_box"><img src="img/tidy/wheelchair.png" /></div>
+        <p>站内设施</p>
+      </div>
+      <div class="col button button-icon" ng-click="toSystemMsgTidy();">
+        <div class="img_box"><img src="img/tidy/bullhorn.png" /></div>
+        <p>系统通知</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

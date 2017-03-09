@@ -1,0 +1,148 @@
+<ion-view cache-view="false">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" ng-click="subwayTidy2Back()">返回</a>
+    <!--标题-->
+    <h1 class="title">地图</h1>
+    <!--右侧按钮-->
+    <a class="button button-clear" ng-if="showSTPoint" ng-click="selectCancel()" >取消</a>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content id="subwayTidy">
+    <!--地铁图-->
+    <ion-scroll delegate-handle="subwayScroll" zooming="true" direction="xy" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="overflow:hidden;height:100%" has-bouncing="false">
+
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" id="subwayMap" style="margin-top:-20px;">
+        <g id="result">
+
+        </g>
+        <!--1号线-->
+        <g style="opacity: {{w1}};">
+          <!--路径-->
+          <path d="M100,550
+                         L100,200 520,200"
+
+                style="stroke:red; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round;z-index: 999;"/>
+
+          <path d="M380,200
+                         L380,50"
+                style="stroke:red; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round"/>
+        </g>
+
+        <!--4号线-->
+        <g style="opacity: {{w4}};">
+          <!--路径-->
+          <path d="M240,202
+                           L205,202 205,420 100,420"
+                style="stroke:#4b8bf4; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round"/>
+        </g>
+
+        <!--2号线-->
+        <g style="opacity: {{w2}};">
+          <!--路径-->
+          <path d="M205,420
+                           L450,420 450,550"
+                style="stroke:green; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round;"/>
+        </g>
+
+
+        <!--1号线站点-->
+        <g style="opacity: {{w1}};">
+          <circle ng-repeat="p in stations.stations[0]" cx="{{p.x}}px" cy="{{p.y}}px" r="3"
+                  style="stroke:red;stroke-width:1;fill:#fff"/>
+          <text ng-repeat="s in stations.stations[0]" x="{{s.tx}}" y="{{s.ty}}"
+                style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+            {{s.name}}
+          </text>
+        </g>
+
+        <!--4号线站点-->
+        <g style="opacity: {{w4}};">
+          <circle ng-repeat="p in stations.stations[1]" cx="{{p.x}}" cy="{{p.y}}" r="3"
+                  style="stroke:#4b8bf4;stroke-width:1;fill:#fff"/>
+          <text ng-repeat="s in stations.stations[1]" x="{{s.tx}}" y="{{s.ty}}"
+                style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+            {{s.name}}
+          </text>
+        </g>
+
+        <!--2号线站点-->
+        <g style="opacity: {{w2}};">
+          <circle ng-repeat="p in stations.stations[2]" cx="{{p.x}}" cy="{{p.y}}" r="3"
+                  style="stroke:green;stroke-width:1;fill:#fff"/>
+          <text ng-repeat="s in stations.stations[2]" x="{{s.tx}}" y="{{s.ty}}"
+                style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+            {{s.name}}
+          </text>
+        </g>
+        <!--<circle ng-repeat="p in subwayDate" cx="{{p.x}}" cy="{{p.y}}" r="3"
+                style="stroke:red;stroke-width:1;fill:#fff"/>
+        <text ng-repeat="s in subwayDate" x="{{s.tx}}" y="{{s.ty}}"
+              style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+          {{s.name}}
+        </text>-->
+
+        <!--起点标记-->
+        <g ng-show="showSTPoint">
+          <!--<circle id="circle" r="10" cx="100" cy="100" fill="tomato" />-->
+          <image id="stPoint" x="100" y="100" width="32" height="32"
+                 xlink:href="img/subway/st.png"/>
+          <animateMotion
+            xlink:href="#stPoint"
+            dur="1s"
+            begin="0s"
+            repeatCount="indefinite"
+            path="M0,0 0,10,0,0">
+
+          </animateMotion>
+        </g>
+        <!--终点标记-->
+        <g ng-show="showEDPoint">
+          <image id="edPoint" x="0" y="0" width="32" height="32"
+                 xlink:href="img/subway/ed.png"/>
+          <animateMotion
+            xlink:href="#edPoint"
+            dur="1s"
+            begin="0s"
+            repeatCount="indefinite"
+            path="M0,0 0,10,0,0">
+
+          </animateMotion>
+        </g>
+        <circle ng-repeat="p in subwayData.stations" cx="{{p.x}}" cy="{{p.y}}" r="11"
+                style="opacity: 0;" ng-click="selectStation(p.id,p.x,p.y);"/>
+      </svg>
+    </ion-scroll>
+  </ion-content>
+
+  <!--信息面板-->
+  <div style="position:absolute;bottom:0px;width:100%;padding: 10px; ">
+    <!--放大-->
+    <a class="button button-clear" ng-click="larger()" style="float: right"><img src="img/tidy/bigger.png" height="32px" width="32px" /></a>
+
+    <!--缩小-->
+    <a class="button button-clear" ng-click="smaller()"><img src="img/tidy/smaller.png" height="32px" width="32px" /></a>
+    <!--起点终点输入-->
+      <div class="row" style="background-color:#fff;text-align: center;font-size: 28px;font-family: 微软雅黑;border: 1px solid #ccc;padding: 10px 0px 0px">
+        <div class="col">
+          {{subwayTidySt}}
+        </div>
+        <div class="col col-20" style="max-width:10%">
+          <img src="img/subway/exchange.png" style="margin-top: -5px;margin-bottom: 5px"/>
+        </div>
+        <div class="col">
+          {{subwayTidyEd}}
+        </div>
+      </div>
+    <!--详情和取消-->
+    <div class="row btn_decision" style="margin-top: 0px" ng-if="showEDPoint">
+      <div class="col button button-block yes" style="font-size: 24px;border-radius: 0px;margin-bottom: 0px" ng-click="toWayDetail()">详情</div>
+      <div class="col button button-block no" style="font-size: 24px;border-radius: 0px;margin-bottom: 0px" ng-click="selectCancel()">取消</div>
+    </div>
+  </div>
+
+</ion-view>

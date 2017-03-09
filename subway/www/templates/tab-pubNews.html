@@ -1,0 +1,71 @@
+<ion-view>
+  <ion-side-menus>
+
+    <!-- 中间内容 -->
+    <ion-side-menu-content style="font-family: 微软雅黑">
+      <div class="row" style="position: absolute;top:50px;width:100%;height:56px;border-bottom:solid #d7d7d7 1px;padding: 2px;font-size: 16px">
+        <div class="col">
+          <img src="img/tab-pub/loc.png" menu-toggle="left" style="margin:6px 0px -9px 0px;height: 28px"/>
+          <span style="color: #a1a1a1">龙翔桥站</span></div>
+        <div class="col">
+          <p style="border:solid #49c29d 1px;border-radius: 12px;height: 35px;margin-top: 2px;" ng-click="toSearchNews()">
+            <img src="img/tab-pub/search.png" style="height: 22px;margin: 5px 12px;"/>
+          </p>
+        </div>
+      </div>
+      <ion-content style="top:106px;">
+        <ion-refresher spinner="ios" on-refresh="doRefresh();">
+        </ion-refresher>
+        <div ng-repeat="x in pubContent">
+          <ion-item class="item item-avatar-left pub_all"   >
+            <img src="{{x.userImg}}">
+            <div ng-click="toContentDetail()">
+              <p class="user_name">{{x.user}}</p>
+              <p style="color: #a1a1a1">{{x.time}}<span style="margin-right: 20px"></span> {{x.place}}</p>
+              <p class="content">{{x.content}}</p>
+              <p ng-if="x.hasImage">
+                <div style="background-image: url({{x.image}});background-position: center center;background-size: cover; height: 200px;margin-bottom: 15px; overflow: hidden">
+
+                </div>
+              </p>
+            </div>
+
+            <a class="button button-clear" style="position: absolute;left: 150px;color: #a1a1a1" ng-click="toTransmit($index)"><img class="resend" src="img/tab-pub/post.png" >转发</a>
+            <a class="button button-clear" style="left: 170px; color:#a1a1a1"><img class="comment" src="img/tab-pub/comment.png">{{x.comment}}</a>
+            <a class="button button-clear" style="left: 190px;color: #a1a1a1;"><img class="like" src="img/tab-pub/good.png">{{x.good}}</a>
+          </ion-item>
+
+        </div>
+
+
+      </ion-content>
+    </ion-side-menu-content>
+
+    <!-- 左侧菜单 -->
+    <ion-side-menu side="left" width="300">
+
+      <ion-header-bar></ion-header-bar>
+      <div style="position: absolute;top:50px;width:40%;z-index:-1;font-family: 微软雅黑;text-align: center">
+        <ion-item class="item item-borderless item-icon-right" style="padding-right: 40px;color: #49c29d" ng-click="changeLine(-1)">
+          全部
+          <i class="icon ion-ios-arrow-right" style="font-size: 20px"></i>
+        </ion-item>
+        <ion-item class="item item-borderless item-icon-right" style="padding-right: 40px;color: #c61027"ng-click="changeLine(0)">
+          一号线
+          <i class="icon ion-ios-arrow-right" style="font-size: 20px"></i>
+        </ion-item>
+        <ion-item class="item item-borderless item-icon-right" style="padding-right: 40px;color: #e7971c"ng-click="changeLine(1)">
+          二号线
+          <i class="icon ion-ios-arrow-right" style="font-size: 20px"></i>
+        </ion-item>
+        <ion-item class="item item-borderless item-icon-right" style="padding-right: 40px;color: #81c627"ng-click="changeLine(2)">
+          四号线
+          <i class="icon ion-ios-arrow-right" style="font-size: 20px"></i>
+        </ion-item>
+      </div>
+      <ion-content style="margin-left:120px;border:solid #d5d5d5 1px;">
+        <ion-item ng-repeat="x in sta" ng-click="pubStations();">{{x.name}}</ion-item>
+      </ion-content>
+    </ion-side-menu>
+  </ion-side-menus>
+</ion-view>

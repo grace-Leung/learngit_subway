@@ -1,0 +1,63 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-balanced">
+
+  <!-- 主页 -->
+
+  <ion-tab title="{{nowLang.tab[0]}}" icon-off="myicon-home-off" icon-on="myicon-home-on" href="#/tab/home">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- 发现 -->
+  <ion-tab title="{{nowLang.tab[1]}}" icon-off="myicon-discover-off " icon-on="myicon-discover-on"  href="#/tab/dt2">
+    <!--导航栏-->
+    <ion-header-bar class="bar-balanced" align-title="center">
+      <h1 class="title">{{nowLang.tab[1]}}</h1>
+    </ion-header-bar>
+    <ion-tabs class="tabs-striped tabs-top tabs-color-active-assertive " id="discover">
+
+      <ion-tab title="{{nowLang.taDiscover[1]}}" href="#/tab/dt1">
+        <ion-nav-view name="discoverTab-dt1"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="{{nowLang.taDiscover[2]}}" href="#/tab/dt2">
+        <ion-nav-view name="discoverTab-dt2" ></ion-nav-view>
+      </ion-tab >
+
+      <ion-tab title="{{nowLang.taDiscover[3]}}" href="#/tab/dt3">
+        <ion-nav-view name="discoverTab-dt3" ></ion-nav-view>
+      </ion-tab>
+
+    </ion-tabs>
+  </ion-tab>
+
+  <!-- 塞吧 -->
+  <ion-tab title="{{nowLang.tab[2]}}" icon-off="myicon-pub-off" icon-on="myicon-pub-on " href="#/tab/pubNews">
+    <!--导航栏-->
+    <ion-header-bar class="bar-balanced" align-title="center">
+      <!--左侧按钮-->
+      <a class="button button-clear" ng-click="tabToMyPub()"><img src="img/tab-account/user.png" height="32px" width="32px" style="margin: 3px;"></a>
+      <!--标题-->
+      <div  class="title" style="font-size: 18px;">
+        <span>
+          <span id="news" style="border: 1px solid #fff;color: #49c29d;background:#fff;padding:2px 15px;border-radius: 5px 0px 0px 5px;margin-right: -6px" ng-click="toggleCard1();">{{nowLang.tabPubNews[0]}}</span>
+          <span id="help" style="border: 1px solid #fff;padding: 2px 24px;border-radius: 0px 5px 5px 0px;" ng-click="toggleCard2();">{{nowLang.tabPubNews[1]}}</span>
+        </span>
+      </div>
+      <!--右侧按钮-->
+      <a class="button button-clear icon ion-plus" style="line-height: 35px" ng-click="sendPub();"></a>
+    </ion-header-bar>
+    <span ng-if="hasMessage"
+          style="position:fixed;top:10px;left:32px;z-index:9;height: 10px;width: 10px;border-radius: 50%;background-color: red;"></span>
+    <div class="addPayway" style="z-index: 4" ng-if="isAddPub">
+      <a class="likeButton"  style="color: #fff;position: absolute;top: 28px;" href="#/sendPub4News">{{nowLang.tabPubNews[0]}}</a>
+      <a class="likeButton" style="color: #fff" href="#/sendPub4Help">{{nowLang.tabPubNews[1]}}</a>
+    </div>
+    <ion-nav-view name="tab-pub"></ion-nav-view>
+  </ion-tab>
+
+  <!-- 我的 -->
+  <ion-tab title="{{nowLang.tab[3]}}" icon-off="myicon-account-off" icon-on="myicon-account-on" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

@@ -1,0 +1,32 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced item-input-inset" align-title="center">
+    <!--输入框-->
+    <label class="item-input-wrapper" style="border-radius: 12px;height: 35px;background-color: #fff">
+      <img src="img/tab-pub/search.png" style="height: 22px;margin: 5px;" />
+      <input ng-click="toInput()" class="pub_placeholder" style="font-size: 16px;font-family: 微软雅黑;margin-bottom: 2px" type="text" placeholder="搜索" ng-model="searchText">
+    </label>
+    <!--右侧按钮-->
+    <a class="button button-clear" href="#/tab/pubNews" style="font-family: 微软雅黑">取消</a>
+  </ion-header-bar>
+
+
+  <!--内容区-->
+  <ion-content id="pub_search">
+    <!--热门话题-->
+    <div ng-if="!isInput">
+      <div class="row">
+        <div class="col">#陈伟霆在龙翔桥#</div>
+        <div class="col">#武林站有趣事#</div>
+      </div>
+    </div>
+    <!--搜索结果-->
+    <div ng-if="hasInput">
+      <ion-item class="item item-icon-left" style="height: 50px;padding: 13px 0px 0px 50px;font-family: 微软雅黑" ng-repeat="x in results | filter:searchText" ng-click="toDetail()">
+        <i class="icon ion-ios-search" style="font-size: 24px"></i>
+        {{x}}
+      </ion-item>
+    </div>
+
+  </ion-content>
+</ion-view>

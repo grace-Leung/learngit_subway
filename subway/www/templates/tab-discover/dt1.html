@@ -1,0 +1,48 @@
+<ion-view>
+
+  <!--内容区-->
+  <ion-content style="height:{{dt1Height}}px;top:100px;">
+    <ion-item class="item item-dark item-button-right" style="height: 42px;padding: 0px;font: 14px 微软雅黑;background-color: #797979;border: none">
+      <img src="img/tab-discover/loc.png" style="height: 25px;margin: 7px 10px -6px 15px"/>
+      离我最近：{{nearStation}}
+      <a class="button button-clear icon ion-ios-search light" style="color:#fff;top: 1px;right: 10px;" ng-click="dt1OpenModal();"></a>
+    </ion-item>
+    <ion-scroll delegate-handle="dt1Scroll" zooming="true" direction="xy" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="background-color:#82898f;overflow:hidden;height:{{dt1Scroll}}px;" has-bouncing="false" min-zoom="0.7">
+      <img id="dt1Map" src="img/tab-discover/map1.jpg" height="100%" width="500px"/>
+    </ion-scroll>
+    <div class="row dark-bg" style="text-align: center;padding:5px 20px;position: absolute;top: 330px;right:10px;background: transparent;font: 20px 微软雅黑;height: 42px;line-height: 20px;">
+      <div class="col" ng-click="dt1Smaller();"><img src="img/tab-discover/smaller.png" height="16px" width="16px" /></div>
+      <div class="col col-25" style="color:#F46D65;background-color: #fff;margin: 0px 10px;" id="dt1Card1" ng-click="dt1SelectCard(1);">便民设施</div>
+      <div class="col col-25 " style="color:#fff;margin: 0px 10px;" id="dt1Card2" ng-click="dt1SelectCard(2);">特殊通道</div>
+      <div class="col col-25" style="color:#fff;margin: 0px 10px;" id="dt1Card3" ng-click="dt1SelectCard(3);">卫生间</div>
+      <div class="col" ng-click="dt1Bigger();"><img src="img/tab-discover/bigger.png" height="16px" width="16px" /></div>
+    </div>
+    <div style="height:33%">
+
+
+      <!--便民设施-->
+      <div id="service" ng-if="dt1Card1Selected" style="font:13px 微软雅黑;">
+        <div class="row" style="height:25%;margin-top:5%">
+          <div class="col "><img src="img/tab-discover/1.png"/>售票</div>
+          <div class="col "><img src="img/tab-discover/2.png"/>询问</div>
+          <div class="col "><img src="img/tab-discover/3.png"/>警务室</div>
+          <div class="col "><img src="img/tab-discover/4.png"/>卫生间</div>
+        </div>
+        <div class="row" style="height:25%;margin-top: 4%">
+          <div class="col "><img src="img/tab-discover/5.png"/>公共电话</div>
+          <div class="col "><img src="img/tab-discover/6.png"/>无障碍设施</div>
+          <div class="col "><img src="img/tab-discover/7.png"/>无障碍电梯</div>
+          <div class="col "><img src="img/tab-discover/8.png"/>自动售票机</div>
+        </div>
+        <div class="row" style="height:25%;margin-top: 4%">
+          <div class="col "><img src="img/tab-discover/9.png"/>出口</div>
+          <div class="col "><img src="img/tab-discover/10.png"/>安检</div>
+          <div class="col "><img src="img/tab-discover/11.png"/>自动取款机</div>
+          <div class="col "><img src="img/tab-discover/12.png"/>商店</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

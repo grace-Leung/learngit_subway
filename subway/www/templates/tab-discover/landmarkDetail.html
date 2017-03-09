@@ -1,0 +1,64 @@
+<ion-view cache-view="false">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" ng-click="landmarkDetailBack();"></a>
+    <!--标题-->
+    <h1 class="title">{{placeName}}</h1>
+
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content style="text-align: -webkit-center;padding-top: 20px">
+    <div style="height:200px;width:200px;border-radius: 10px;border:solid darkgray 1px;">
+      <img src="{{landmarkContentImg}}" height="100%" width="100%" style="border-radius: 10px;"/>
+    </div>
+    <h3 style="font-family: 微软雅黑;font-size: 20px;color: #49c29d;border-bottom: 1px solid #ccc;padding: 0px 20px 7px 20px;margin: 20px 25px;">
+      <img id="start" src="img/tab-discover/start-outline.png" style="position:absolute;left: 40px;height: 20px" ng-click="lmdFill();"/>{{ldmStaName}}
+    </h3>
+
+    <div style="height: 30px;text-align: left;margin-bottom: 20px;">
+      <div class="station_line">地铁一号线</div>
+    </div>
+    <!--起点站和终点站-->
+    <div class="station_end" style="float:left;margin-left: 25px">{{ldmStart}}</div>
+    <img style="height: 28px;" src="img/subway/exchange.png" ng-click="ldmExchange()"/>
+    <div class="station_end" style="float:right;margin-right: 25px">{{ldmEnd}}</div>
+
+
+    <div style="margin: 10px 25px 15px 25px;padding: 10px;height: 130px">
+      <div id="ldm1" style="position:absolute;left:35px;width:344px" ;>
+
+        <div style="float: left"><div id="circles-1"></div>
+        <p>即将到站</p></div>
+        <div style="float: right"><div id="circles-3"></div>
+        <p>末班车</p></div>
+        <div><div id="circles-2"></div>
+        <p>正在途中</p></div>
+
+      </div>
+      <div id="ldm2" style="position:absolute;left:100%;width:344px" ;>
+        <!--环形计时-->
+        <div style="float: left"><div id="circles-4"></div>
+        <p>即将到站</p></div>
+        <div style="float: right"><div id="circles-6"></div>
+        <p>末班车</p></div>
+        <div><div id="circles-5"></div>
+        <p>正在途中</p></div>
+
+      </div>
+    </div>
+    <!--线路-->
+    <ion-scroll zooming="false" direction="x" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="overflow:hidden;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1500px" height="180" style="font-family: 微软雅黑;font-size: 16px">
+        <g id="ldmLine"></g>
+      </svg>
+    </ion-scroll>
+  </ion-content>
+  <!--收藏/退票-->
+  <div style="position: absolute;bottom:0px;width:100%;height: 69px;background-color: rgba(255,255,255,0.8);text-align: center;pointer-events: none">
+    <button class="button set_stop" ng-click="stop();">设为起点</button>
+    <button class="button set_stop">设为终点</button>
+  </div>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear " ng-click="payRecordBack();"><i ng-if="!isTidy" class="icon ion-ios-arrow-back"></i><span ng-if="isTidy">返回</span></a>
+    <!--标题-->
+    <h1 class="title">支付记录</h1>
+    <!--右侧按钮-->
+    <a class="button button-clear">编辑</a>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content id="payment_record">
+    <div class="row">
+      <div class="col">
+        <h3>武林广场 >> 九堡</h3>
+        <p>2016/5/31 18:30</p>
+      </div>
+      <div class="col col-20" style="text-align: right">
+        <h2>￥3</h2>
+        <p>支付宝</p>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

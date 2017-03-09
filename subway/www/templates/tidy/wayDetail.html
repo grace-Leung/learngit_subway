@@ -1,0 +1,36 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" href="#/subwayTidy">返回</a>
+    <!--标题-->
+    <h1 class="title">详情</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content style="text-align:center;font-family:微软雅黑;padding-top: 70px;">
+    <!--起点和终点-->
+    <div class="station_end" style="color:#49c29d;float:left;margin-left: 25px;font-size: 28px">{{way.st}}</div>
+    <img style="height: 28px;" src="img/tidy/angle-double.png" ng-click="ldmExchange()"/>
+    <div class="station_end" style="color:#49c29d;float:right;margin-right: 25px;font-size: 28px">{{way.ed}}</div>
+
+    <!--票面信息-->
+    <div class="row" id="wayDetail1" style="margin: 50px 40px 40px">
+      <div class="col"><img src="img/tidy/Clock.png" height="32px" width="32px"/>{{way.time}}分钟</div>
+      <div class="col"><img src="img/tidy/money.png" height="32px" width="32px"/>{{way.money}}元</div>
+    </div>
+    <div class="row" id="wayDetail2" style="margin: 40px">
+      <div class="col"><img src="img/tidy/subway1.png" height="32px" width="32px"/>{{way.sta.length}}站</div>
+      <div class="col"><img src="img/tidy/pagelines.png" height="32px" width="32px"/>+{{way.points}}</div>
+    </div>
+
+    <!--线路站点-->
+    <p id="passedLines" style="font-size: 24px;margin: 50px 0px 30px"></p>
+    <ion-scroll zooming="false" direction="x" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="overflow:hidden;" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="{{passStaWidth}}px" height="220" style="margin-bottom: -11px;font-size: 24px">
+        <g id="passSta"></g>
+      </svg>
+    </ion-scroll>
+  </ion-content>
+</ion-view>

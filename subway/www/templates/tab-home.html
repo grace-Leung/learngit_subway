@@ -1,0 +1,73 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--标题-->
+    <h1 class="title">{{nowLang.tabHome[0]}}</h1>
+    <!--右侧按钮-->
+    <a class="button button-clear icon ion-ios-bell" ng-click="openNotice()"></a>
+
+  </ion-header-bar>
+  <span ng-if="isTiming"
+     style="position:fixed;top:13px;right:18px;z-index:9;height: 10px;width: 10px;border-radius: 50%;background-color: red;"></span>
+  <!--内容区-->
+  <ion-content class="top_space">
+    <!--轮播图-->
+    <ion-slide-box does-continue="true" auto-play="true" slide-interval="3000" style="margin:2px 15px 8px 15px;">
+      <ion-slide>
+        <div class=" positive-bg" style="height: 233px;background-color: transparent"><img src="img/tab-home/a1.jpg"
+                                                                                           class="slide_img"/></div>
+      </ion-slide>
+      <ion-slide>
+        <div class=" energized-bg" style="height: 233px;background-color: transparent"><img src="img/tab-home/a2.jpg"
+                                                                                            class="slide_img"/></div>
+      </ion-slide>
+      <ion-slide>
+        <div class=" balanced-bg" style="height: 233px;background-color: transparent"><img src="img/tab-home/a3.png"
+                                                                                           class="slide_img"/></div>
+      </ion-slide>
+    </ion-slide-box>
+
+
+    <!--购票/订单按钮-->
+    <div class="row" style="margin-top:60px;height:20%">
+      <a class="col col-center button " id="buy_tickets" href="#/subway">
+        <img src="img/tab-home/buyTicket.png" class="cusImg" id="buy_tickets_img">{{nowLang.tabHome[1]}}
+      </a>
+      <a class="col col-center button" id="my_tickets" href="#/orderTab/notUse">
+        <img src="img/tab-home/myOrder.png" class="cusImg" id="my_tickets_img">{{nowLang.tabHome[2]}}
+      </a>
+    </div>
+
+
+    <!--二维码-->
+    <div id="fast_enter" style="height:40%">
+      <div>
+        <img src="img/tab-home/barcode.png" class="personCodeBtn balanced-bg padding" id="enter_code"
+             ng-click="toPersonCode();">
+      </div>
+      <div>
+        <ion-item class="item-borderless">
+          <h1>{{nowLang.tabHome[3]}}</h1>
+          <p>{{nowLang.tabHome[4]}}</p>
+        </ion-item>
+        <ion-item class="item-borderless item-icon-right item-avatar-left">
+          <img src="{{userImg}}" style="position:absolute;left: 0px">
+          <h2 style="position: absolute;left: 50px;top: 25px">{{userName}}</h2>
+          <i class="icon ion-loop"></i>
+        </ion-item>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <!--轮播背景-->
+  <div
+    style="height:242px;;margin-top:70px;margin-left:5%;margin-right:5%;border: solid darkslategray 3px;border-radius: 5px;background-color:#ffffff;border-color:#f2f2f2;">
+
+  </div>
+  <div
+    style="height:252px;width: 84%; border: solid darkslategray 3px;border-radius: 5px;position: absolute;top:70px;left:8%;z-index: -1;border-color:#f2f2f2;">
+  </div>
+  <!--<div style="height:250px; margin:60px 25px;border: solid darkslategray 1px;border-radius: 5px;"></div>
+  <div style="height:150px; margin:60px 50px;border: solid darkslategray 1px;border-radius: 5px;"></div>-->
+</ion-view>

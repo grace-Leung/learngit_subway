@@ -1,0 +1,35 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" href="#/tab/dt1"></a>
+    <!--标题-->
+    <h1 class="title">站点选择</h1>
+  </ion-header-bar>
+
+  <ion-content id="quick_search" style="top:100px;height:{{dt3Height}}px;">
+    <div style="height:56px;padding:7px 20px;">
+      <p style="border:solid #49c29d 1px;border-radius: 12px;height: 35px;margin-top: 2px;font-size: 16px;font-family: 微软雅黑;color: #cccccc" ng-click="toSearchPoint();"><img style="height: 22px;margin: 5px 12px -5px;" src="img/tab-pub/search.png" />搜索</p>
+    </div>
+    <div class="row">
+      <div class="col " ng-click="dt3ToPoint(8);"><img src="img/tab-discover/p8.png" width="32px" height="32px"><p>影剧院</p></div>
+      <div class="col " ng-click="dt3ToPoint(9);"><img src="img/tab-discover/p9.png" width="32px" height="32px"><p>美食</p></div>
+      <div class="col " ng-click="dt3ToPoint(10);"><img src="img/tab-discover/p10.png" width="32px" height="32px"><p>医院</p></div>
+      <div class="col " ng-click="dt3ToPoint(11);"><img src="img/tab-discover/p11.png" width="32px" height="32px"><p>娱乐</p></div>
+    </div>
+    <div class="row">
+      <div class="col " ng-click="dt3ToPoint(0);"><img src="img/tab-discover/p1.png" width="32px" height="32px"><p>办公楼</p></div>
+      <div class="col " ng-click="dt3ToPoint(1);"><img src="img/tab-discover/p2.png" width="32px" height="32px"><p>博物馆</p></div>
+      <div class="col " ng-click="dt3ToPoint(2);"><img src="img/tab-discover/p3.png" width="32px" height="32px"><p>酒店</p></div>
+      <div class="col " ng-click="dt3ToPoint(3);"><img src="img/tab-discover/p4.png" width="32px" height="32px"><p>商场</p></div>
+    </div>
+    <div class="row">
+      <div class="col " ng-click="dt3ToPoint(4);"><img src="img/tab-discover/p5.png" width="32px" height="32px"><p>体育</p></div>
+      <div class="col " ng-click="dt3ToPoint(5);"><img src="img/tab-discover/p6.png" width="32px" height="32px"><p>景区</p></div>
+      <div class="col " ng-click="dt3ToPoint(6);"><img src="img/tab-discover/p8.png" width="32px" height="32px"><p>小区</p></div>
+      <div class="col " ng-click="dt3ToPoint(7);"><img src="img/tab-discover/p7.png" width="32px" height="32px"><p>政府机构</p></div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

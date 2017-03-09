@@ -1,0 +1,14 @@
+<ion-view >
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear " href="#/landmarkSearch">返回</a>
+    <!--标题-->
+    <h1 class="title">{{landmarkName}}</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content>
+    <ion-item class="destination" ng-repeat="x in landmarkContent" ng-click="selectLandmark($index);" style="font-size:24px;padding:20px">{{x}}</ion-item>
+  </ion-content>
+</ion-view>

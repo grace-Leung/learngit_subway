@@ -1,0 +1,26 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" href="#/subwaySearch">返回</a>
+    <!--标题-->
+    <h1 class="title">语音</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content scroll="false" style="height:{{windowHeight-50}}px;text-align: center;font-family: 微软雅黑">
+    <div style="height:33%;padding-top: 80px" >
+      <h2 style="font-family: 微软雅黑;font-size: 36px;margin-bottom: 50px">请说话</h2>
+      <p style="color: #49c29d;font-size: 20px">您可以这样说</p>
+    </div>
+    <div style="height:35%;background-color: #f2f2f2;font-size: 24px;line-height: 50px;padding-top: 60px" >
+      火车东站<br/>
+      火车东站到武林广场
+    </div>
+    <div style="height:37%;text-align: -webkit-center" >
+      <div style="background-color: #49c29d;height: 80px;width:80px;padding:20px;border-radius:50%;margin-top: 100px;">
+        <img  src="img/tidy/MICROPHONE.png" height="40px" widht="40px" ng-click="sta();" />
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

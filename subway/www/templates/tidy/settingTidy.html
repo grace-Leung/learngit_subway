@@ -1,0 +1,79 @@
+<ion-view id="settingTidy">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" href="#/indexTidy">返回</a>
+    <!--标题-->
+    <h1 class="title">系统设置</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content id="settings" class="settingTidy">
+    <ion-item class="item item-divider" style="font-size:20px">
+      通用
+    </ion-item>
+    <ion-toggle id="pushing" ng-model="settings.enablePush">
+      推送消息
+    </ion-toggle>
+    <ion-item class="item item-icon-right" href="#/selectVersion">
+      切换版本
+      <span style="position:absolute;right:40px;">{{ver}}</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" href="#/setLangTidy">
+      多语言
+      <span style="position:absolute;right:40px;">{{lang}}</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      清理存储空间
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+
+    <ion-item class="item item-divider" style="font-size:20px">
+      账户
+    </ion-item>
+    <ion-item class="item item-icon-right" href="#/editTidy">
+      个人信息
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" href="#/wallet">
+      钱包
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" href="#/enpt">
+      环保贡献
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+
+    <ion-item class="item item-divider" style="font-size:20px">
+      用户体验
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      乘车须知
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      帮助
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      反馈
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+
+    <ion-item class="item item-divider" style="font-size:20px">
+      关于
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      功能介绍
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item item-icon-right" ng-click="">
+      版本更新
+      <span style="position:absolute;right:40px;">赛百路 1.0</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+  </ion-content>
+</ion-view>
+

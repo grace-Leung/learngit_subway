@@ -1,0 +1,14 @@
+<ion-modal-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" ng-click="landMarkCloseModal();"></a>
+    <!--标题-->
+    <h1 class="title">选择地区</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content>
+    <ion-item class="strict" ng-repeat="x in area" ng-click="landmarkSelectArea($index);" >{{x}}</ion-item>
+  </ion-content>
+</ion-modal-view>

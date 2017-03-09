@@ -1,0 +1,21 @@
+<ion-view cache-view="false">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <!--<a class="button button-clear  icon ion-ios-arrow-back" href="#/setting"></a>-->
+    <a class="button button-clear icon ion-ios-arrow-back" href="#/settingTidy" ></a>
+    <!--标题-->
+    <h1 class="title">语言选择</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content>
+    <ion-radio ng-model="nowSelectLang" ng-click="changeLang(0);" ng-value="ch">
+      {{chinese}}
+    </ion-radio>
+    <ion-radio ng-model="nowSelectLang" ng-click="changeLang(1);" ng-value="en">
+      {{english}}
+    </ion-radio>
+  </ion-content>
+</ion-view>
+

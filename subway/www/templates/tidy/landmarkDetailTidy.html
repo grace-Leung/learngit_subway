@@ -1,0 +1,34 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" ng-click="toBack()">返回</a>
+    <!--标题-->
+    <h1 class="title">{{titleName}}</h1>
+  </ion-header-bar>
+
+  <ion-content style="text-align:center;font-family:微软雅黑;padding-top: 70px;">
+    <!--站点名-->
+    <div>
+      <p style="font-size: 20px;color:#999">附近地铁站</p>
+      <h2 style="font-size: 40px;color: #49c29d;font-family: 微软雅黑;margin: 20px 0px 30px;">{{staName}}</h2>
+    </div>
+    <div style="height: 30px;text-align: left;margin-bottom: 40px;">
+      <div class="station_line tidy_station_line">地铁{{passLine}}号线</div>
+    </div>
+
+    <!--起点和终点-->
+    <div class="station_end" style="float:left;margin-left: 25px;font-size: 28px">{{stLine}}</div>
+    <img style="height: 28px;" src="img/subway/exchange.png" ng-click="ldmExchange()"/>
+    <div class="station_end" style="float:right;margin-right: 25px;font-size: 28px">{{edLine}}</div>
+
+    <!--站点-->
+    <ion-scroll zooming="false" direction="x" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="overflow:hidden;margin:30px 0px 30px" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="{{passStaWidth}}px" height="220" style="font-size: 24px">
+        <g id="passSta"></g>
+      </svg>
+    </ion-scroll>
+    <span style="font-size: 28px;margin-right: 20px;color: #49c29d">末班车</span><span style="font-size: 28px">晚上22：30</span>
+  </ion-content>
+</ion-view>

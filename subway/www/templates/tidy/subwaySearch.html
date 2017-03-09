@@ -1,0 +1,35 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced tidy" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear" href="#/indexTidy">返回</a>
+    <!--标题-->
+    <h1 class="title">地铁查询</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content id="subwaySearch" style="text-align:center;padding-top:80px">
+    <div class="row" style="margin-bottom: 50px">
+      <div class="col likeButton" ng-click="toSpeech()">
+        <div class="subwaySearch_choice">
+        <img src="img/tidy/MICROPHONE.png" >
+        </div>
+        <p>语音</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col likeButton">
+        <div class="subwaySearch_choice">
+        <img src="img/tidy/sta.png" ng-click="toSubwayStation()">
+        </div>
+        <p>地铁站</p>
+      </div>
+      <div class="col likeButton" ng-click="toSubwayTidy()">
+        <div class="subwaySearch_choice">
+        <img src="img/tidy/map-o.png" >
+        </div>
+        <p>地图</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

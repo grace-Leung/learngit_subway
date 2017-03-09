@@ -1,0 +1,43 @@
+<ion-view style="background-color: #f2f2f2">
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" href="#/tab/home"></a>
+    <!--标题-->
+    <h1 class="title">选择起点</h1>
+  </ion-header-bar>
+
+  <!--搜索框-->
+  <div style="background-color:#fff;position:fixed;top:50px;width:100%;height: 56px;border-bottom:solid #d7d7d7 1px;padding:0px 20px;">
+    <div class="bar item-input-inset"  style="background: none">
+      <label class="item-input-wrapper" style="border:solid #49c29d 1px;border-radius: 12px;height: 35px;margin-top: 2px;background-color: #fff;">
+        <img src="img/tab-pub/search.png"  style="height: 22px;margin: 5px;"/>
+        <input type="text" class="input_info" placeholder="输入您要搜索的站点" style="font-family: 微软雅黑">
+      </label>
+    </div>
+  </div>
+
+  <!--路线-->
+  <div class="select_line" style="position: absolute;top:106px;width:40%;">
+    <ion-item class="item item-borderless" ng-click="changeLine(-1)" id="line0ss" style="color:#49c29d">
+      全部
+    </ion-item>
+    <ion-item class="item item-borderless" ng-click="changeLine(0)" id="line1ss" style="color:#C61027">
+      一号线<br/> <span>(文泽路)</span>
+    </ion-item>
+    <ion-item class="item item-borderless" ng-click="changeLine(1)" id="line2ss" style="color:#C61027">
+      一号线<br/> <span> (临平)</span>
+    </ion-item>
+    <ion-item class="item item-borderless" ng-click="changeLine(2)" id="line3ss" style="color:#e7971c">
+      二号线
+    </ion-item>
+    <ion-item class="item item-borderless" ng-click="changeLine(3)" id="line4ss" style="color:#8ec627">
+      四号线
+    </ion-item>
+  </div>
+
+  <!--站点-->
+  <ion-content id="select_station" style="margin-top:0px;margin-left:40%;top:106px;background-color: #fff;">
+    <ion-item style="border-top: none;border-left:#f2f2f2 1px solid;border-bottom: 1px solid #ddd;font-family: 微软雅黑"  ng-repeat="x in sta" ng-click="selectStartNotice(x.id);">{{x.name}}</ion-item>
+  </ion-content>
+</ion-view>

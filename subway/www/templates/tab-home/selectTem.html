@@ -1,0 +1,20 @@
+<!--内容区-->
+<ion-content class="stationModal stationModal_station" style="margin-left: 40%;background-color:#fff">
+  <!--站点-->
+  <ion-item ng-repeat="x in sta" ng-click="selectSta(x.id);">{{x.name}}</ion-item>
+</ion-content>
+<!--路线-->
+<div class="stationModal" style="text-align:center;position: absolute;top:50px;width:40%;z-index:-1;font-size: 20px;font-family: 微软雅黑;">
+  <ion-item class="item item-borderless" ng-click="changeLine(0)" id="line1" style="color:#C61027">
+    一号线<br/> <span>(文泽路)</span>
+  </ion-item>
+  <ion-item class="item item-borderless" ng-click="changeLine(1)" id="line2" style="color:#C61027">
+    一号线<br/> <span> (临平)</span>
+  </ion-item>
+  <ion-item class="item item-borderless" ng-click="changeLine(2)" id="line3" style="color:#e7971c">
+    二号线
+  </ion-item>
+  <ion-item class="item item-borderless" ng-click="changeLine(3)" id="line4" style="color:#8ec627">
+    四号线
+  </ion-item>
+</div>

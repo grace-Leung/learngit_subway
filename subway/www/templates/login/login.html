@@ -1,0 +1,86 @@
+<ion-view>
+  <img src="img/tidy/bc2.png" width="100%" height="100%"
+       style="position:absolute;-webkit-filter:brightness(.9);z-index: -1"/>
+  <ion-content style="text-align: center;padding-top: 120px">
+    <h2 style="color: #49c29d;font-family: langqian;font-size: 48px;margin-bottom: 20px">赛百路</h2>
+    <p style="color: #49c29d;font-family: langqian;font-size: 18px;margin-bottom: 120px">地铁自助取票</p>
+    <div>
+      <!--登陆-->
+      <div id="login" style="width:100%;position: absolute;left:0;padding-left: 70px;padding-right: 70px;" class="login_box" >
+        <ion-item class="item item-input">
+          <img src="img/user.png" height="32px" width="32px" />
+          <input type="text" placeholder="用户名" ng-model="user.name"/>
+        </ion-item>
+        <ion-item class="item item-input">
+          <img src="img/lock.png" height="32px" width="32px"/>
+          <input type="password" placeholder="密码" ng-model="user.pwd"/>
+        </ion-item>
+        <button class="button button-block button-balanced" ng-click="loginLogin();">登录</button>
+        <a class="button button-clear" style="color:#fff;float: left" ng-click="toRegister1();">立即注册</a>
+        <a class="button button-clear" style="color:#fff;float: right" ng-click="toForgetPwd1();">忘记密码</a>
+        <div>
+          <a class="button button-icon icon ion-close-circled" style="color:#fff;margin-top: 100px;opacity: 0.8" ng-click="loginToBack();"></a>
+        </div>
+      </div>
+
+      <!--注册1-->
+      <div class="login_box" id="register1" style="width:100%;position: absolute;left:100%;padding-left: 50px;padding-right: 50px;">
+        <ion-item class="item item-input">
+          <img src="img/user.png" height="32px" width="32px"/>
+          <input type="text" placeholder="设置用户名"  />
+        </ion-item>
+        <ion-item class="item item-input">
+          <img src="img/lock.png" height="32px" width="32px"/>
+          <input type="password" placeholder="设置密码，不少于6位"/>
+        </ion-item>
+        <button class="button button-block button-balanced" ng-click="toRegister2()">下一步</button>
+        <a class="button button-clear" style="color:#fff" ng-click="r1toBack()">返回登录界面</a>
+      </div>
+
+      <!--注册2-->
+      <div class="login_box" id="register2" style="width:100%;position: absolute;left:100%;padding-left: 50px;padding-right: 50px;">
+        <ion-item class="item item-input item-button-right">
+          <img src="img/mobile.png" height="32px" width="32px"/>
+          <input type="text" placeholder="输入手机号"/>
+          <span class="button button-icon" style="color: #fff;background-color: #49c29d;font-size: 14px; opacity: 0.9; min-height: 25px; height:25px; font-family: 微软雅黑; right: 5px; margin-top: 3px;">获取验证码</span>
+        </ion-item>
+        <ion-item class="item item-input">
+          <img src="img/lock.png" height="32px" width="32px"/>
+          <input type="password" placeholder="输入短信验证码"/>
+        </ion-item>
+        <button class="button button-block button-balanced" ng-click="loginRegister();">注册</button>
+        <a class="button button-clear" style="color:#fff" ng-click="r2toBack()">返回上一步</a>
+      </div>
+
+      <!--忘记密码1-->
+      <div class="login_box" id="forgetPwd1" style="width:100%;position: absolute;left:100%;padding-left: 50px;padding-right: 50px;">
+        <ion-item class="item item-input item-button-right">
+          <img src="img/mobile.png" height="32px" width="32px"/>
+          <input type="text" placeholder="输入手机号"/>
+          <span class="button button-icon" style="color: #fff;background-color: #49c29d;font-size: 14px; opacity: 0.9; min-height: 25px; height:25px; font-family: 微软雅黑; right: 5px; margin-top: 3px;">输入验证码</span>
+        </ion-item>
+        <ion-item class="item item-input">
+          <img src="img/lock.png" height="32px" width="32px"/>
+          <input type="password" placeholder="输入短信验证码"/>
+        </ion-item>
+        <button class="button button-block button-balanced" ng-click="toForgetPwd2()">下一步</button>
+        <a class="button button-clear" style="color:#fff" ng-click="f1toBack()">返回登录界面</a>
+      </div>
+
+      <!--忘记密码2-->
+      <div class="login_box" id="forgetPwd2" style="width:100%;position: absolute;left:100%;padding-left: 50px;padding-right: 50px;">
+        <ion-item class="item item-input">
+          <img src="img/lock.png" height="32px" width="32px"/>
+          <input type="text" placeholder="输入新密码"/>
+        </ion-item>
+        <ion-item class="item item-input">
+          <img src="img/lock.png" height="32px" width="32px"/>
+          <input type="password" placeholder="再次输入密码"/>
+        </ion-item>
+        <button class="button button-block button-balanced">重置</button>
+        <a class="button button-clear" style="color:#fff" ng-click="f2toBack()">返回上一步</a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

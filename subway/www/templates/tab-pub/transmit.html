@@ -1,0 +1,25 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" ng-click="transmitToBack();"></a>
+    <!--标题-->
+    <h1 class="title">转发</h1>
+    <!--左侧按钮-->
+    <a class="button button-clear" ng-click="transmitSend();">发送</a>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content style="background-color: #f2f2f2">
+    <ion-item class="item item-input" style="padding:16px;border: none;height: 300px;">
+      <textarea ng-model="message" class="pub_placeholder" placeholder="请输入你要分享的内容"  style="resize: none;height:100%;padding: 0px;font-size: 16px;font-family: 微软雅黑;"></textarea>
+      <span style="position: absolute;right: 4%;bottom: 115px;color: #ccc;font-family: 微软雅黑">还可以输入{{140-message.length}}字数</span>
+
+      <ion-item class="item item-thumbnail-left" style="position: absolute;width: 94%;left: 3%;bottom: 3%;height: 50px;font-family: 微软雅黑">
+        <img src="img/tab-pub/top1.jpg" />
+        <p style="margin:15px 0px 10px">@陈伟</p>
+        <p style="overflow: hidden">我的儿子走丢了，他穿着白色T恤</p>
+      </ion-item>
+    </ion-item>
+  </ion-content>
+</ion-view>

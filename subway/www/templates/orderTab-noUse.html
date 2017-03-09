@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-content style="top: 100px;">
+    <ion-item ng-repeat="x in noUseList" style="font-family: 微软雅黑;padding: 8px">
+      <!--起点和终点-->
+      <div class="row">
+        <div class="col col-45">
+          <div class="stations_ticket">{{subwayData.stations[x.stId].name}}</div>
+        </div>
+        <div class="col col-5" style="text-align: center">
+          <img style="height: 20px;margin-top: 12px;" src="img/tidy/angle-double.png" ng-click="ldmExchange()"/>
+        </div>
+        <div class="col col-45">
+          <div class="stations_ticket">{{subwayData.stations[x.edId].name}}</div>
+        </div>
+      </div>
+      <!--订单信息-->
+      <div class="row">
+        <div class="col">
+          <p>订单编号：{{x.orderId}}</p>
+          <p>购票时间：{{x.inTime}}</p>
+          <p>订单完成时间：{{x.overTime}}</p>
+        </div>
+        <div class="col" style="text-align: right;margin-top: 12px;">
+          <p style="font-size: 16px;margin:3px 0px 5px">￥{{x.money}}</p>
+          <p style="font-size: 16px;"><img src="img/tab-home/alipay.png" height="32px" width="32px" style="margin:0px 5px -9px"/>支付宝</p>
+        </div>
+      </div>
+    </ion-item>
+    <!--<img src="img/temp/noUse.png" />-->
+  </ion-content>
+</ion-view>

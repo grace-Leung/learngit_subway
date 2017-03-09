@@ -1,0 +1,18 @@
+<ion-view >
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" href="#/tab/dt3"></a>
+    <!--标题-->
+    <h1 class="title">{{landmarkName}}</h1>
+    <!--右侧按钮-->
+    <a class="button button-clear icon-right ion-chevron-down" id="landmark_district" style="margin-right: 2px" ng-click="landmarkOpenModal();">{{nowArea}}</a>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content>
+    <div style="height: 34px;background-color: #e4e4e4;color: #666;font-size: 16px;font-family: 微软雅黑;padding: 6px 15px;">请选择目的地</div>
+    <ion-item class="destination" ng-repeat="x in landmarkContent" ng-click="selectLandmark($index);">{{x}}</ion-item>
+  </ion-content>
+</ion-view>
+

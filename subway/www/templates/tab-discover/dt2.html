@@ -1,0 +1,126 @@
+<ion-view>
+
+  <ion-content style="height:{{dt2Height}}px;top:100px;">
+
+    <!--地铁图-->
+    <ion-scroll zooming="true" direction="xy" overflow-scroll="false" scrollbar-x="false" scrollbar-y="false"
+                style="overflow:hidden;margin-top:-30px;" has-bouncing="false" max-zoom="1.2" min-zoom="0.7">
+
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="570" height="570" id="subwayMap">
+        <g id="result">
+
+
+        </g>
+        <!--1号线-->
+        <g style="opacity: {{w1}};">
+          <!--路径-->
+          <path d="M100,550
+                         L100,200 520,200"
+
+                style="stroke:red; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round;z-index: 999;"/>
+
+          <path d="M380,200
+                         L380,50"
+                style="stroke:red; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round"/>
+        </g>
+
+        <!--4号线-->
+        <g style="opacity: {{w4}};">
+          <!--路径-->
+          <path d="M240,202
+                           L205,202 205,420 100,420"
+                style="stroke:#4b8bf4; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round"/>
+        </g>
+
+        <!--2号线-->
+        <g style="opacity: {{w2}};">
+          <!--路径-->
+          <path d="M205,420
+                           L450,420 450,550"
+                style="stroke:green; fill:none;stroke-width: 3px;stroke-linejoin: round; stroke-linecap: round;"/>
+        </g>
+
+
+        <!--1号线站点-->
+        <g style="opacity: {{w2}};">
+          <circle ng-repeat="p in stations.stations[0]" cx="{{p.x}}" cy="{{p.y}}" r="3"
+                  style="stroke:red;stroke-width:1;fill:#fff"/>
+          <text ng-repeat="s in stations.stations[0]" x="{{s.tx}}" y="{{s.ty}}"
+                style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+            {{s.name}}
+          </text>
+        </g>
+
+        <!--4号线站点-->
+        <g style="opacity: {{w2}};">
+          <circle ng-repeat="p in stations.stations[1]" cx="{{p.x}}" cy="{{p.y}}" r="3"
+                  style="stroke:#4b8bf4;stroke-width:1;fill:#fff"/>
+          <text ng-repeat="s in stations.stations[1]" x="{{s.tx}}" y="{{s.ty}}"
+                style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+            {{s.name}}
+          </text>
+        </g>
+
+        <!--2号线站点-->
+        <g style="opacity: {{w2}};">
+          <circle ng-repeat="p in stations.stations[2]" cx="{{p.x}}" cy="{{p.y}}" r="3"
+                  style="stroke:green;stroke-width:1;fill:#fff"/>
+          <text ng-repeat="s in stations.stations[2]" x="{{s.tx}}" y="{{s.ty}}"
+                style="font-family: 微软雅黑;font-size:x-small;text-anchor: {{s.anchor}}">
+            {{s.name}}
+          </text>
+        </g>
+
+        <!--定位-->
+        <g ng-show="showLocPoint">
+          <!--<circle id="circle" r="10" cx="100" cy="100" fill="tomato" />-->
+          <image id="location" x="100" y="100" width="32" height="32"
+                 xlink:href="img/tab-discover/location.png"/>
+          <animateMotion
+            xlink:href="#location"
+            dur="1s"
+            begin="0s"
+            fill="freeze"
+            repeatCount="indefinite"
+            path="M0,0 0,10,0,0">
+
+          </animateMotion>
+        </g>
+        <circle ng-repeat="p in subwayData.stations" cx="{{p.x}}" cy="{{p.y}}" r="11"
+                style="opacity: 0;" ng-click="showLocation(p.id,p.x,p.y);"/>
+      </svg>
+    </ion-scroll>
+
+    <div style="position:absolute;bottom:0px;z-index: 2;width:100%;font-family: 微软雅黑">
+
+      <ion-item class="item item-dark item-icon-right" style="height: 42px;padding: 0px;font: 14px 微软雅黑;background-color: #797979;border: none" >
+        <img src="img/tab-discover/loc.png" style="height: 25px;margin: 7px 10px -6px 15px"/>
+        {{nowLang.taDiscover[4]}}：{{nearStation}}
+        <a class="button button-clear icon ion-ios-search light" style="color:#fff;right: 0px;min-height: 42px;" ng-click="dt2OpenModal();"></a>
+      </ion-item>
+      <div class="light-bg" style="padding-top: 10px;border-bottom: 1px solid #d7d7d7;">
+        <div class="row" style="margin-bottom: 10px">
+          <div class="col col-10" style="margin:0px 4px 0px 12px"><img src="img/number/{{dt2Way.img}}.png" height="20px" width="20px"/></div>
+          <div class="col" style="border-bottom: 1px solid #cccccc;padding-left: 0px;height: 40px;margin-right: 20px"><span style="color: #C61027;">{{dt2Way.img}}{{nowLang.taDiscover[5]}}（{{dt2Way.st}}{{nowLang.taDiscover[6]}}{{dt2Way.ed}}）</span></div>
+        </div>
+        <div class="row">
+          <div class="col col-10" style="margin:10px 5px;"><img src="img/tab-discover/router.png" height="100%" width="100%" /></div>
+          <div class="col col-15" style="margin-right: -20px">
+            <p>{{dt2Way.st}}方向</p>
+            <p>{{dt2Way.ed}}方向</p>
+          </div>
+          <div class="col" style="margin-right: 20px">
+            <p>{{nowLang.taDiscover[7]}}{{dt2Way.next1}}</p>
+            <p>{{nowLang.taDiscover[7]}}{{dt2Way.next2}}</p>
+          </div>
+          <div class="col">
+            <p>{{nowLang.taDiscover[8]}}{{dt2Way.time1}}分钟</p>
+            <p>{{nowLang.taDiscover[8]}}{{dt2Way.time2}}分钟</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,40 @@
+<ion-view>
+  <!--导航栏-->
+  <ion-header-bar class="bar-balanced" align-title="center">
+    <!--左侧按钮-->
+    <a class="button button-clear  icon ion-ios-arrow-back" ng-click="goBack();"></a>
+    <!--标题-->
+    <h1 class="title">详情</h1>
+  </ion-header-bar>
+
+  <!--内容区-->
+  <ion-content style="margin-bottom:50px;">
+    <ion-item class="item item-avatar-left pub_all" ng-repeat="x in contentTitle">
+      <img src="{{x.userImg}}">
+      <p class="user_name">{{x.user}}</p>
+      <p style="color: #a1a1a1">{{x.time}}<span style="margin-right: 20px"></span> {{x.place}}</p>
+      <p class="content">{{x.content}}</p>
+      <p ng-if="x.hasContact"></p>
+      <p style="margin-bottom: 10px" ng-if="x.hasImage"><img src="{{x.image}}" width="100%" height="100%"></p>
+      <a ng-if="isNews" class="button button-clear" style="margin-left:10px;float: right;color: #a1a1a1;"><img class="like" src="img/tab-pub/good.png">12</a>
+      <a class="button button-clear" style="float: right;color: #a1a1a1"><img class="resend" src="img/tab-pub/post.png">转发</a>
+    </ion-item>
+    <ion-item class="item item-avatar-left" style="font-family: 微软雅黑;border-color: #f2f2f2" ng-repeat="x in contentComment">
+      <img src="{{x.userImg}}" style="height: 28px;width:28px;left: 22px;">
+      <p >{{x.user}}<span style="position: absolute;right:18px;color: #a1a1a1;">{{x.time}}</span></p>
+      <p style="white-space: normal;margin-top: 8px">{{x.comment}}</p>
+    </ion-item>
+    <!--<ion-item class="item item-avatar-left">
+      <img src="img/number/5.png">
+      <p>赛百路粉丝<span style="position: absolute;right:40px;">17:35</span></p>
+      <p>这两个小伙子挺靓。</p>
+    </ion-item>-->
+
+
+  </ion-content>
+  <div style="position: absolute;bottom: 0;border-top: solid #d7d7d7 1px;width:100%;height: 60px;padding:5px 18px;font-family: 微软雅黑" class="item item-input item-button-right">
+    <img src="img/tab-pub/emoji.png" style="margin-right: 16px"/>
+    <input type="text" class="pub_placeholder" style="font-size: 16px;font-family: 微软雅黑" placeholder="说点什么吧..." />
+    <button class="button button-clear" style="background-color: #49c29d;color:#fff;font-family: 微软雅黑;font-size: 16px;margin-top: 4px">发送</button>
+  </div>
+</ion-view>
